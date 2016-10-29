@@ -11,7 +11,7 @@ public class SaveHighscore : MonoBehaviour {
         currentHighScores = PlayerPrefsX.GetStringArray(playerPrefsKey);
     }
 	
-	void saveHighScore(string name, int score)
+	public void saveHighScore(string name, int score)
     {
         var highscoreIndex = 0;
         var loop = 10;

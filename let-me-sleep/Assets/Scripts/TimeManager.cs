@@ -10,6 +10,7 @@ public class TimeManager : MonoBehaviour {
     float bonusTime = 3.0f;
     public Text uiText;
     public Text totalScore;
+    public SaveHighscore saveHighscoreScript;
 
 	// Use this for initialization
 	void Start () {
@@ -27,6 +28,7 @@ public class TimeManager : MonoBehaviour {
             {
                 Time.timeScale = 0f;
                 print(timeLasted.ToString("#"));
+                saveHighscoreScript.saveHighScore("muuh", 5);
             }
         }  
 	}
