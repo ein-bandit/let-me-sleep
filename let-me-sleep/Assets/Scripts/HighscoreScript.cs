@@ -10,6 +10,8 @@ public class HighscoreScript : MonoBehaviour
     private string[] currentHighScores;
     private GameObject highScoreLine;
 
+    public GameObject HighScorePanel;
+
 
     private UnityEngine.UI.Button backButton;
 
@@ -60,7 +62,7 @@ public class HighscoreScript : MonoBehaviour
                 }
                 Debug.Log(t.text);
             }
-            highScoreClone.transform.SetParent(GameObject.FindGameObjectWithTag("HighScorePanel").transform);
+            highScoreClone.transform.SetParent(HighScorePanel.transform);
         }
     }
 
