@@ -1,27 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SaveHighscore : MonoBehaviour {
-    
+public class SaveHighscore : MonoBehaviour
+{
+
     private string[] currentHighScores;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         currentHighScores = GameManager.getHighscores();
-        if (currentHighScores.Length == 0)
+        foreach (string str in currentHighScores)
         {
-            currentHighScores = new string[1];
+            Debug.Log(str);
         }
-
         Debug.Log("currentHighscoreLength " + currentHighScores.Length);
     }
-	
-	public void saveHighScore(string name, int score)
+
+    public void saveHighScore(string name, int score)
     {
         Debug.Log("trying to save highscore");
-        var newHighscoreIndex = 0;
-        var loop = 10;
-        if (currentHighScores.Length <= 10)
+        int newHighscoreIndex = 0;
+
+        int loop = 10;
+        if (currentHighScores.Length < 10)
         {
             loop = currentHighScores.Length;
         }
@@ -29,38 +31,42 @@ public class SaveHighscore : MonoBehaviour {
         //find position for score
         for (int i = 0; i < loop; i++)
         {
-            if (currentHighScores[i] != null)
+            int temp = int.Parse(currentHighScores[i].Split(',')[1]);
+            if (temp <= score)
             {
-                int temp = int.Parse(currentHighScores[i].Split(',')[1]);
-                if (temp <= score)
-                {
-                    newHighscoreIndex = i;
-                    break;
-                }
+                newHighscoreIndex = i;
+                break;
             }
         }
 
         Debug.Log("newHighscoreIndex " + newHighscoreIndex);
-        
-        string highscore = name + ',' + score.ToString();
 
+        string highscore = name + ',' + score.ToString();
+        Debug.Log("new high score: " + highscore);
         //save last highscore at this position
         string nextValue = currentHighScores[newHighscoreIndex];
+        Debug.Log("nextvalue: " + nextValue);
         //save new highscore at new position.
         currentHighScores[newHighscoreIndex] = highscore;
 
-        //loop for highscores on indices newHighscoreIndex ++ and set the respective last highscore at i+1.
-        int restOfArray = loop - newHighscoreIndex;
-        //loop (10 or less) - highscoreIndex (pos of new highscore) - 1 (last highscore will drop out if highscore already full (10)).
-        if (loop == 10)
+        //enlarge array if not 10
+        if (currentHighScores.Length < 10)
         {
-            restOfArray -= 1;
+            string[] newArray = new string[currentHighScores.Length + 1];
+            for (int i = 0; i < currentHighScores.Length; i++)
+            {
+                newArray[i] = currentHighScores[i];
+            }
+            currentHighScores = newArray;
         }
-        for (int i = newHighscoreIndex + 1; i < restOfArray; i++)
+
+        
+
+        for (int i = newHighscoreIndex + 1; i < loop; i++)
         {
-            string temp = currentHighScores[i];
-            currentHighScores[i] = nextValue;
-            nextValue = temp;
+                string temp = currentHighScores[i];
+                currentHighScores[i] = nextValue;
+                nextValue = temp;
         }
 
         GameManager.saveHighScores(currentHighScores);

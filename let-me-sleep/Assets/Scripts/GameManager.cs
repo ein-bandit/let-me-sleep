@@ -1,4 +1,6 @@
-﻿public class GameManager
+﻿
+
+public class GameManager
 {
     private GameManager _instance;
 
@@ -29,4 +31,5 @@
         PlayerPrefsX.SetStringArray(playerPrefsKey, newscores);
         highscores = newscores;
     }
+    
 }

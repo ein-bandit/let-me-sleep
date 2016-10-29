@@ -16,7 +16,7 @@ public class HighscoreScript : MonoBehaviour
     {
         backButton = GameObject.FindGameObjectWithTag("Back").GetComponent<Button>();
         backButton.onClick.AddListener(() => UnityEngine.SceneManagement.SceneManager.LoadScene("Menu"));
-        
+
         //get playerrefsx data for highscores
         highScoreLine = (GameObject)Resources.Load("HighScoreLinePrefab", typeof(GameObject));
         currentHighScores = GameManager.getHighscores();
@@ -30,10 +30,9 @@ public class HighscoreScript : MonoBehaviour
         Debug.Log("printing # highscores " + currentHighScores.Length);
         for (int i = 0; i < currentHighScores.Length; i++)
         {
-            //get prefab
-            GameObject highScoreClone = (GameObject)Instantiate(highScoreLine, highScoreLine.transform.position, highScoreLine.transform.rotation);
-            Vector3 temp = highScoreClone.transform.position;
-            temp.y -= 10;
+            GameObject highScoreClone =
+                (GameObject)Instantiate(highScoreLine, highScoreLine.transform.position, highScoreLine.transform.rotation);
+
 
             //edit text data
             Debug.Log("text childs " + highScoreLine.GetComponentsInChildren<Text>().Length);
@@ -58,7 +57,9 @@ public class HighscoreScript : MonoBehaviour
                 Debug.Log(t.text);
             }
             highScoreClone.transform.SetParent(GameObject.FindGameObjectWithTag("HighscoreList").transform);
+
         }
+
     }
 
 }
