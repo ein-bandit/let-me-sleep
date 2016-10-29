@@ -7,7 +7,6 @@ using UnityEngine.EventSystems;
 public class TimeManager : MonoBehaviour {
 
     public Text uiText;
-    public Text totalScore;
     public InputField playerName;
     public SaveHighscore saveHighscoreScript;
     public GameObject scoreCanvas;
@@ -17,7 +16,7 @@ public class TimeManager : MonoBehaviour {
     bool showScore;
     float timeLasted = 0.0f; // used for score
     float remainingTime = 5.4f; // used to determine how long game lasts
-    float bonusTime = 3.0f; // amount of time bonus you get on shot
+    float bonusTime = 1.0f; // amount of time bonus you get on shot
 
 	// Use this for initialization
 	void Start () {
@@ -56,7 +55,6 @@ public class TimeManager : MonoBehaviour {
         if (showScore && Input.GetKeyDown("return"))
         {
             int highscoreToSafe = (int) Mathf.Round(timeLasted);
-            totalScore.text = timeLasted.ToString();
             saveHighscoreScript.saveHighScore(playerName.text,highscoreToSafe);
             SceneManager.LoadScene("Highscore");
         }
