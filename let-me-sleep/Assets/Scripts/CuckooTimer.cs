@@ -4,12 +4,14 @@ using System.Collections;
 public class CuckooTimer : MonoBehaviour {
 
     float spawnTimer;
+    float cuckooTimer;
     bool hasCuckoo;
     GameObject cuckoo;
     
 	// Use this for initialization
 	void Start () {
         spawnTimer = Random.Range(2f,6f);
+        cuckooTimer = 2f;
         hasCuckoo = false;
 	}
 	
@@ -30,10 +32,22 @@ public class CuckooTimer : MonoBehaviour {
             cuckoo.transform.parent = this.gameObject.transform;
         }
 
-        if(hasCuckoo && cuckoo==null)
+        if(hasCuckoo)
         {
-            spawnTimer = Random.Range(2f, 6f);
-            hasCuckoo = false;
+            cuckooTimer -= Time.deltaTime;
+            
+            if(cuckooTimer <= 0f)
+            {
+                cuckooTimer = 2f;
+                Destroy(cuckoo.gameObject);
+            }
+
+            if(cuckoo == null)
+            {
+                cuckooTimer = 2f;
+                spawnTimer = Random.Range(2f, 6f);
+                hasCuckoo = false;
+            }       
         }
 	}
 }
