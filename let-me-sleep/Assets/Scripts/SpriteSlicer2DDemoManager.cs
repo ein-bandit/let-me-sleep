@@ -44,15 +44,16 @@ public class SpriteSlicer2DDemoManager : MonoBehaviour
 
 			if (rayCastResult.rigidbody)
 			{
+                if(!rayCastResult.rigidbody.isKinematic)
+                {
+                    SpriteSlicer2D.ExplodeSprite(rayCastResult.rigidbody.gameObject, 16, 7.0f, true, ref m_SlicedSpriteInfo);
 
-			    SpriteSlicer2D.ExplodeSprite(rayCastResult.rigidbody.gameObject, 16, 7.0f, true, ref m_SlicedSpriteInfo);
-
-				if(m_SlicedSpriteInfo.Count == 0)
-				{
-					// Couldn't cut for whatever reason, add some force anyway
-					rayCastResult.rigidbody.AddForce(new Vector2(0.0f, 4.0f));
-				}
-				
+                    if (m_SlicedSpriteInfo.Count == 0)
+                    {
+                        // Couldn't cut for whatever reason, add some force anyway
+                        rayCastResult.rigidbody.AddForce(new Vector2(0.0f, 4.0f));
+                    }
+                }	    
 			}
 		}
 
