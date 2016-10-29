@@ -1,0 +1,32 @@
+# =============== #
+# Unity generated #
+# =============== #
+let-me-sleep/Temp/
+let-me-sleep/Library/
+
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+let-me-sleep/ExportedObj/
+let-me-sleep/obj/
+
+let-me-sleep/*.csproj
+let-me-sleep/*.sln
+*.svd
+*.userprefs
+*.pidb
+*.suo
+*.user
+*.unityproj
+*.booproj
+
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
