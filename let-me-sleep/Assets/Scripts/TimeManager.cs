@@ -4,8 +4,8 @@ using System.Collections;
 
 public class TimeManager : MonoBehaviour {
 
-    bool stopTime = false;
-    bool showScore = false;
+    bool stopTime;
+    bool showScore;
     float timeLasted = 0.0f;
     float remainingTime = 5.4f;
     float bonusTime = 3.0f;
@@ -17,7 +17,8 @@ public class TimeManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	    
+        stopTime = false;
+        showScore = false;
 	}
 	
 	// Update is called once per frame
@@ -41,6 +42,7 @@ public class TimeManager : MonoBehaviour {
         {
             int highscoreToSafe = (int) Mathf.Round(timeLasted);
             saveHighscoreScript.saveHighScore(playerName.text,highscoreToSafe);
+            Application.LoadLevel("Highscore");
         }
 
 	}
