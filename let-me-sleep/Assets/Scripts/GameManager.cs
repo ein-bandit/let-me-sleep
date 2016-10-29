@@ -23,6 +23,7 @@ public class GameManager
         {
             highscores = PlayerPrefsX.GetStringArray(playerPrefsKey);
         }
+        //resetHighscores();
         return highscores;
     }
 
@@ -30,6 +31,11 @@ public class GameManager
     {
         PlayerPrefsX.SetStringArray(playerPrefsKey, newscores);
         highscores = newscores;
+    }
+
+    public static void resetHighscores()
+    {        
+        saveHighScores(new string[0]);
     }
     
 }
