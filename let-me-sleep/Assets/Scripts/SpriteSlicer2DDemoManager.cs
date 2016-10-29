@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class SpriteSlicer2DDemoManager : MonoBehaviour 
 {
+    public GameObject timeManager;
+
 	List<SpriteSlicer2DSliceInfo> m_SlicedSpriteInfo = new List<SpriteSlicer2DSliceInfo>();
 	TrailRenderer m_TrailRenderer;
 
@@ -41,6 +43,8 @@ public class SpriteSlicer2DDemoManager : MonoBehaviour
 			mouseWorldPosition.z = Camera.main.transform.position.z;
 
 			RaycastHit2D rayCastResult = Physics2D.Raycast(mouseWorldPosition, new Vector3(0, 0, 0), 0.0f);
+
+            timeManager.GetComponent<TimeManager>().addTime();
 
 			if (rayCastResult.rigidbody)
 			{

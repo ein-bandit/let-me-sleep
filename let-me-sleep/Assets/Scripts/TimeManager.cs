@@ -56,10 +56,10 @@ public class TimeManager : MonoBehaviour {
         if (showScore && Input.GetKeyDown("return"))
         {
             int highscoreToSafe = (int) Mathf.Round(timeLasted);
+            totalScore.text = timeLasted.ToString();
             saveHighscoreScript.saveHighScore(playerName.text,highscoreToSafe);
             SceneManager.LoadScene("Highscore");
         }
-
 	}
 
     public void addTime()
