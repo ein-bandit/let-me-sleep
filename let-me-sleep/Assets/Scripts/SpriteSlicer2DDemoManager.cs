@@ -50,7 +50,7 @@ public class SpriteSlicer2DDemoManager : MonoBehaviour
 				if(m_SlicedSpriteInfo.Count == 0)
 				{
 					// Couldn't cut for whatever reason, add some force anyway
-					rayCastResult.rigidbody.AddForce(new Vector2(0.0f, 400.0f));
+					rayCastResult.rigidbody.AddForce(new Vector2(0.0f, 4.0f));
 				}
 				
 			}

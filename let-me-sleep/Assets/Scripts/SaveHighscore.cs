@@ -43,7 +43,7 @@ public class SaveHighscore : MonoBehaviour {
         {
             restOfArray -= 1;
         }
-        for (int i = highscoreIndex + 1; i < ; i++)
+        for (int i = highscoreIndex + 1; i < restOfArray; i++)
         {
             string temp = currentHighScores[i];
             currentHighScores[i] = nextValue;
