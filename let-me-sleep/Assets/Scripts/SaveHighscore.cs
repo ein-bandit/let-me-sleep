@@ -2,13 +2,12 @@
 using System.Collections;
 
 public class SaveHighscore : MonoBehaviour {
-
-    private const string playerPrefsKey = "LetMeSleepHighScores";
+    
     private string[] currentHighScores;
 
     // Use this for initialization
     void Start () {
-        currentHighScores = PlayerPrefsX.GetStringArray(playerPrefsKey);
+        currentHighScores = GameManager.getHighscores();
         if (currentHighScores.Length == 0)
         {
             currentHighScores = new string[1];
@@ -64,7 +63,7 @@ public class SaveHighscore : MonoBehaviour {
             nextValue = temp;
         }
 
-        PlayerPrefsX.SetStringArray(playerPrefsKey, currentHighScores);
+        GameManager.saveHighScores(currentHighScores);
 
     }
 }

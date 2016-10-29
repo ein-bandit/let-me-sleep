@@ -6,12 +6,8 @@ using System;
 public class HighscoreScript : MonoBehaviour
 {
 
-    private const string playerPrefsKey = "LetMeSleepHighScores";
     private string[] currentHighScores;
     private GameObject highScoreLine;
-
-    public GameObject HighScorePanel;
-
 
     private UnityEngine.UI.Button backButton;
 
@@ -20,17 +16,16 @@ public class HighscoreScript : MonoBehaviour
     {
         backButton = GameObject.FindGameObjectWithTag("Back").GetComponent<Button>();
         backButton.onClick.AddListener(() => UnityEngine.SceneManagement.SceneManager.LoadScene("Menu"));
-
-
+        
         //get playerrefsx data for highscores
         highScoreLine = (GameObject)Resources.Load("HighScoreLinePrefab", typeof(GameObject));
-        currentHighScores = PlayerPrefsX.GetStringArray(playerPrefsKey);
+        currentHighScores = GameManager.getHighscores();
 
         Debug.Log("inside highscore start");
         generateCurrentHighScores();
     }
 
-    public void generateCurrentHighScores()
+    private void generateCurrentHighScores()
     {
         Debug.Log("printing # highscores " + currentHighScores.Length);
         for (int i = 0; i < currentHighScores.Length; i++)
@@ -62,7 +57,7 @@ public class HighscoreScript : MonoBehaviour
                 }
                 Debug.Log(t.text);
             }
-            highScoreClone.transform.SetParent(HighScorePanel.transform);
+            highScoreClone.transform.SetParent(GameObject.FindGameObjectWithTag("HighscoreList").transform);
         }
     }
 
