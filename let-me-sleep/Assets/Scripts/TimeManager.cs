@@ -27,13 +27,14 @@ public class TimeManager : MonoBehaviour {
             if(remainingTime <= 0.0f)
             {
                 Time.timeScale = 0f;
+                stopTime = true;
                 print(timeLasted.ToString("#"));
                 saveHighscoreScript.saveHighScore("muuh", 5);
             }
         }  
 	}
 
-    void addTime()
+    public void addTime()
     {
         remainingTime += bonusTime;
     }
