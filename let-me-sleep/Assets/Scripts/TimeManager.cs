@@ -1,22 +1,27 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class TimeManager : MonoBehaviour {
 
-    bool stopTime;
-    bool showScore;
-    float timeLasted = 0.0f;
-    float remainingTime = 5.4f;
-    float bonusTime = 3.0f;
     public Text uiText;
     public Text totalScore;
     public InputField playerName;
     public SaveHighscore saveHighscoreScript;
     public GameObject scoreCanvas;
 
+
+    bool stopTime;
+    bool showScore;
+    float timeLasted = 0.0f; // used for score
+    float remainingTime = 5.4f; // used to determine how long game lasts
+    float bonusTime = 3.0f; // amount of time bonus you get on shot
+
 	// Use this for initialization
 	void Start () {
+        
         stopTime = false;
         showScore = false;
         Time.timeScale = 1.0f;
@@ -29,21 +34,30 @@ public class TimeManager : MonoBehaviour {
             remainingTime -= Time.deltaTime;
             timeLasted += Time.deltaTime;
             uiText.text = remainingTime.ToString("#");
+
+            // if time runs out -> show score canvas with input field for player
             if(remainingTime <= 0.0f)
             {
+                // set canvas score variable to true
                 showScore = true;
+
+                // stop game times
                 Time.timeScale = 0f;
                 stopTime = true;
                 
             }
         }
-
+        // show canvas for player name
         scoreCanvas.SetActive(showScore);
-        if(showScore && Input.GetKeyDown("return"))
+        // set focus on player input field
+        EventSystem.current.SetSelectedGameObject(playerName.gameObject, null);
+        playerName.OnPointerClick(new PointerEventData(EventSystem.current));
+
+        if (showScore && Input.GetKeyDown("return"))
         {
             int highscoreToSafe = (int) Mathf.Round(timeLasted);
             saveHighscoreScript.saveHighScore(playerName.text,highscoreToSafe);
-            Application.LoadLevel("Highscore");
+            SceneManager.LoadScene("Highscore");
         }
 
 	}
