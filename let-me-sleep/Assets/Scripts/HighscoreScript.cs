@@ -3,9 +3,10 @@ using System.Collections;
 using UnityEngine.UI;
 using System;
 
-public class HighscoreScript : MonoBehaviour {
+public class HighscoreScript : MonoBehaviour
+{
 
-    private  const string playerPrefsKey = "LetMeSleepHighScores";
+    private const string playerPrefsKey = "LetMeSleepHighScores";
     private string[] currentHighScores;
     private GameObject highScoreLine;
 
@@ -13,7 +14,8 @@ public class HighscoreScript : MonoBehaviour {
     private UnityEngine.UI.Button backButton;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         backButton = GameObject.FindGameObjectWithTag("Back").GetComponent<Button>();
         backButton.onClick.AddListener(() => UnityEngine.SceneManagement.SceneManager.LoadScene("Menu"));
 
@@ -22,14 +24,14 @@ public class HighscoreScript : MonoBehaviour {
         highScoreLine = (GameObject)Resources.Load("HighScoreLinePrefab", typeof(GameObject));
         currentHighScores = PlayerPrefsX.GetStringArray(playerPrefsKey);
 
+        Debug.Log("inside highscore start");
+        generateCurrentHighScores();
+    }
 
-        int highScoreLength = 10;
-        if (currentHighScores.Length <= 10)
-        {
-            highScoreLength = currentHighScores.Length;
-        }
-
-        for ( int i = 0; i < highScoreLength; i++)
+    public void generateCurrentHighScores()
+    {
+        Debug.Log("printing # highscores " + currentHighScores.Length);
+        for (int i = 0; i < currentHighScores.Length; i++)
         {
             //get prefab
             GameObject highScoreClone = (GameObject)Instantiate(highScoreLine, highScoreLine.transform.position, highScoreLine.transform.rotation);
@@ -37,20 +39,29 @@ public class HighscoreScript : MonoBehaviour {
             temp.y -= 10;
 
             //edit text data
-            foreach ( Text t in highScoreLine.GetComponentsInChildren<Text>())
+            Debug.Log("text childs " + highScoreLine.GetComponentsInChildren<Text>().Length);
+            foreach (Text t in highScoreLine.GetComponentsInChildren<Text>())
             {
+                Debug.Log(t.name);
                 if (t.name == "Position")
                 {
-                    t.text = i.ToString();
-                } else if(t.name == "Name")
+                    Debug.Log("setting pos");
+                    t.text = (i + 1).ToString();
+                }
+                else if (t.name == "Name")
                 {
+                    Debug.Log("setting Name");
                     t.text = currentHighScores[i].Split(',')[0];
-                } else if(t.name == "Score")
+                }
+                else if (t.name == "Score")
                 {
+                    Debug.Log("setting Score");
                     t.text = currentHighScores[i].Split(',')[1];
                 }
+                Debug.Log(t.text);
             }
+            highScoreClone.transform.SetParent(GameObject.FindGameObjectWithTag("HighScorePanel").transform);
         }
-	}
-	
+    }
+
 }
