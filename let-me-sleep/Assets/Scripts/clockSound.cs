@@ -4,12 +4,12 @@ using System.Collections;
 public class clockSound : MonoBehaviour {
 
     AudioClip[] clockSounds = new AudioClip[3];
-    AudioSource audio;
+    AudioSource _audio;
 
 	// Use this for initialization
 	void Start () {
 
-        audio = GetComponent<AudioSource>();
+        _audio = GetComponent<AudioSource>();
 
         clockSounds[0] = Resources.Load("Ticking-noise") as AudioClip;
         clockSounds[1] = Resources.Load("Ticking-clock-sound") as AudioClip;
@@ -21,7 +21,11 @@ public class clockSound : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+        //stop noise ticking when time has stopped (game is over)
+        if (Time.timeScale == 0 && _audio.isPlaying)
+        {
+            _audio.Stop();
+        }
 	}
 
     IEnumerator StartSound()
@@ -29,7 +33,6 @@ public class clockSound : MonoBehaviour {
         yield return new WaitForSeconds(0.5f);
 
         int playingSoundNumber = Random.Range(0, clockSounds.Length);
-        audio.PlayOneShot(clockSounds[playingSoundNumber], Random.Range(0.3f,0.6f));
-        print(playingSoundNumber);
+        _audio.PlayOneShot(clockSounds[playingSoundNumber], Random.Range(0.3f,0.6f));
     }
 }
