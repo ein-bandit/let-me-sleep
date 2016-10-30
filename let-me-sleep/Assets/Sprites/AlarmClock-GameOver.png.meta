@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 43fa11f6bccc2fb42a9374862b920692
-timeCreated: 1477832579
+timeCreated: 1477833740
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -58,10 +58,10 @@ TextureImporter:
       name: AlarmClock
       rect:
         serializedVersion: 2
-        x: 14
-        y: 512
-        width: 990
-        height: 505
+        x: 79
+        y: 500
+        width: 867
+        height: 524
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -72,7 +72,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 43
-        y: 13
+        y: 2
         width: 938
         height: 480
       alignment: 0
