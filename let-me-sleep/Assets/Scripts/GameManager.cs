@@ -1,18 +1,31 @@
-﻿
+﻿using UnityEngine;
 
-public class GameManager
+public class GameManager : MonoBehaviour
 {
-    private GameManager _instance;
+    private static GameManager _instance;
+
+    private static AudioSource _audio;
 
     private const string playerPrefsKey = "LetMeSleepHighScores";
     private static string[] highscores = null;
     
-    public GameManager instance
+    
+    void Awake()
+    {
+        if (_instance != null && _instance != this) {
+            Destroy(this.gameObject);
+            return;
+        } else {
+            _instance = this;
+        }
+        DontDestroyOnLoad(this.gameObject);
+    }
+
+
+    public static GameManager instance
     {
         get
         {
-            if (_instance == null)
-                _instance = new GameManager();
             return _instance;
         }
     }
@@ -34,8 +47,18 @@ public class GameManager
     }
 
     public static void resetHighscores()
-    {        
+    {
         saveHighScores(new string[0]);
     }
-    
+
+    public static void startMusic()
+    {
+        if (_audio == null)
+        {
+            Debug.Log("starting audio");
+            _audio = GameManager.instance.GetComponentInChildren<AudioSource>();
+            _audio.Play();
+        }
+    }
+
 }

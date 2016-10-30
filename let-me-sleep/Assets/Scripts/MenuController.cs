@@ -22,6 +22,7 @@ public class MenuController : MonoBehaviour {
         highScoreButton.onClick.AddListener(() => loadScene("Highscore"));
         startButton.onClick.AddListener(() => loadScene("Game"));
         howToButton.onClick.AddListener(() => loadScene("HowTo"));
+        GameManager.startMusic();
     }
 
 
