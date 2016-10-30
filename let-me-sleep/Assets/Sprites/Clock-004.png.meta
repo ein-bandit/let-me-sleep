@@ -1,14 +1,14 @@
 fileFormatVersion: 2
-guid: b847c7ed42d4e1147afb00992477d79e
-timeCreated: 1477827694
+guid: 6cb5256f2fe25944bb8c5fd018a26ebd
+timeCreated: 1477827779
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Clock-003-House
-    21300002: Clock-003-Pendulum-01
-    21300004: Clock-003-Pendulum-02
-    21300006: Clock-003-Hand-Minutes
-    21300008: Clock-003-Hand-Hours
+    21300000: Clock-004-House
+    21300002: Clock-Hand-Minutes
+    21300004: Clock-Hand-Hours
+    21300006: Clock-Pendulum-01
+    21300008: Clock-004_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -58,67 +58,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Clock-003-House
+      name: Clock-004-House
       rect:
         serializedVersion: 2
-        x: 14
-        y: 14
-        width: 550
-        height: 764
+        x: 9
+        y: 8
+        width: 932
+        height: 998
       alignment: 9
-      pivot: {x: 0.52258396, y: 0.574787}
+      pivot: {x: 0.30008867, y: 0.726518}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Clock-003-Pendulum-01
+      name: Clock-Hand-Minutes
       rect:
         serializedVersion: 2
-        x: 786
-        y: 12
-        width: 110
-        height: 583
+        x: 995
+        y: 856
+        width: 18
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock-Hand-Hours
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 742
+        width: 30
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Clock-Pendulum-01
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 396
+        width: 69
+        height: 327
       alignment: 2
       pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Clock-003-Pendulum-02
+      name: Clock-004_4
       rect:
         serializedVersion: 2
-        x: 927
-        y: 199
-        width: 92
-        height: 410
-      alignment: 1
-      pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Clock-003-Hand-Minutes
-      rect:
-        serializedVersion: 2
-        x: 936
-        y: 24
-        width: 28
-        height: 122
-      alignment: 9
-      pivot: {x: 0.5974317, y: 0.06954784}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Clock-003-Hand-Hours
-      rect:
-        serializedVersion: 2
-        x: 979
-        y: 26
-        width: 34
-        height: 88
-      alignment: 9
-      pivot: {x: 0.5401198, y: 0.07374053}
+        x: 955
+        y: 6
+        width: 64
+        height: 333
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

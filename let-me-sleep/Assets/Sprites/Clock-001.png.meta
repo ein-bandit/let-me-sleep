@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 043d521e6aa7a7647ba3f9af3994ff25
-timeCreated: 1477767031
+timeCreated: 1477827274
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -81,32 +81,6 @@ TextureImporter:
         height: 784
       alignment: 2
       pivot: {x: 0.5, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Clock-001_2
-      rect:
-        serializedVersion: 2
-        x: 941
-        y: 345
-        width: 69
-        height: 104
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Clock-001_3
-      rect:
-        serializedVersion: 2
-        x: 950
-        y: 202
-        width: 60
-        height: 110
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

@@ -1,14 +1,14 @@
 fileFormatVersion: 2
-guid: b847c7ed42d4e1147afb00992477d79e
-timeCreated: 1477827694
+guid: 4c87f1b3d367b9646bc2102b0eed602c
+timeCreated: 1477827381
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Clock-003-House
-    21300002: Clock-003-Pendulum-01
-    21300004: Clock-003-Pendulum-02
-    21300006: Clock-003-Hand-Minutes
-    21300008: Clock-003-Hand-Hours
+    21300000: Buttons-Start
+    21300002: Buttons-Highscore
+    21300004: Buttons-Exit
+    21300006: Buttons-Sound-On
+    21300008: Buttons-Sound-Off
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -58,67 +58,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Clock-003-House
+      name: Buttons-Start
       rect:
         serializedVersion: 2
-        x: 14
-        y: 14
-        width: 550
-        height: 764
-      alignment: 9
-      pivot: {x: 0.52258396, y: 0.574787}
+        x: 56
+        y: 618
+        width: 935
+        height: 331
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Clock-003-Pendulum-01
+      name: Buttons-Highscore
       rect:
         serializedVersion: 2
-        x: 786
-        y: 12
-        width: 110
-        height: 583
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+        x: 173
+        y: 414
+        width: 741
+        height: 187
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Clock-003-Pendulum-02
+      name: Buttons-Exit
       rect:
         serializedVersion: 2
-        x: 927
-        y: 199
-        width: 92
-        height: 410
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 178
+        y: 181
+        width: 716
+        height: 211
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Clock-003-Hand-Minutes
+      name: Buttons-Sound-On
       rect:
         serializedVersion: 2
-        x: 936
-        y: 24
-        width: 28
-        height: 122
-      alignment: 9
-      pivot: {x: 0.5974317, y: 0.06954784}
+        x: 187
+        y: 60
+        width: 258
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Clock-003-Hand-Hours
+      name: Buttons-Sound-Off
       rect:
         serializedVersion: 2
-        x: 979
-        y: 26
-        width: 34
-        height: 88
-      alignment: 9
-      pivot: {x: 0.5401198, y: 0.07374053}
+        x: 510
+        y: 60
+        width: 258
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
