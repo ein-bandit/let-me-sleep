@@ -18,8 +18,8 @@ public class TimeManager : MonoBehaviour {
     bool stopTime;
     bool showScore;
     float timeLasted = 0.0f; // used for score
-    float remainingTime = 20.4f; // used to determine how long game lasts
-    float bonusTime = 5.0f; // amount of time bonus you get on shot
+    float remainingTime = 15.4f; // used to determine how long game lasts
+    float bonusTime = 1.0f; // amount of time bonus you get on shot
 
 	// Use this for initialization
 	void Start () {
@@ -39,7 +39,8 @@ public class TimeManager : MonoBehaviour {
         {
             remainingTime -= Time.deltaTime;
             timeLasted += Time.deltaTime;
-            uiText.text = remainingTime.ToString("#");
+            GameObject.FindGameObjectWithTag("AlarmTime").GetComponent<Text>().text = remainingTime.ToString("#");
+            //uiText.text = remainingTime.ToString("#");
 
             // if time runs out -> show score canvas with input field for player
             if(remainingTime <= 0.0f)
