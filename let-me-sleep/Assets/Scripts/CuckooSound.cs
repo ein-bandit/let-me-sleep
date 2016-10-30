@@ -31,6 +31,5 @@ public class CuckooSound : MonoBehaviour {
 
         int playingSoundNumber = Random.Range(0, cuckooSounds.Length);
         _audio.PlayOneShot(cuckooSounds[playingSoundNumber], Random.Range(0.1f, 0.4f));
-        print(playingSoundNumber);
     }
 }
