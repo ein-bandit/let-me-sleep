@@ -8,7 +8,7 @@ public class MenuController : MonoBehaviour {
     private Button audioButton;
     private Button highScoreButton;
     private Button startButton;
-    private Button howToButton;
+    private Button exitButton;
     private bool soundMuted = false;
 
 
@@ -17,11 +17,11 @@ public class MenuController : MonoBehaviour {
         audioButton = GameObject.FindGameObjectWithTag("MuteButton").GetComponent<Button>();
         highScoreButton = GameObject.FindGameObjectWithTag("Highscore").GetComponent<Button>();
         startButton = GameObject.FindGameObjectWithTag("Game").GetComponent<Button>();
-        howToButton = GameObject.FindGameObjectWithTag("HowTo").GetComponent<Button>();
+        exitButton = GameObject.FindGameObjectWithTag("Exit").GetComponent<Button>();
         audioButton.onClick.AddListener(() => ToggleMuteSound());
         highScoreButton.onClick.AddListener(() => SceneManager.LoadScene("Highscore"));
         startButton.onClick.AddListener(() => SceneManager.LoadScene("Game"));
-        howToButton.onClick.AddListener(() => SceneManager.LoadScene("HowTo"));
+        exitButton.onClick.AddListener(() => Application.Quit());
         GameManager.startMusic();
     }
         
