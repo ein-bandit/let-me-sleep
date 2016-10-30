@@ -1,15 +1,15 @@
 fileFormatVersion: 2
 guid: 043d521e6aa7a7647ba3f9af3994ff25
-timeCreated: 1477827274
+timeCreated: 1477829287
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Clock-001-House
-    21300002: Clock-001-Pendle
+    21300002: Clock-001-Pendulum
     21300004: Clock-001_2
     21300006: Clock-001_3
-    21300008: Clock-001_4
-    21300010: Clock-001_5
+    21300008: Clock-001-Hand-Minutes
+    21300010: Clock-001-Hand-Hours
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -72,7 +72,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Clock-001-Pendle
+      name: Clock-001-Pendulum
       rect:
         serializedVersion: 2
         x: 760
@@ -85,7 +85,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Clock-001_4
+      name: Clock-001-Hand-Minutes
       rect:
         serializedVersion: 2
         x: 950
@@ -93,12 +93,12 @@ TextureImporter:
         width: 27
         height: 140
       alignment: 9
-      pivot: {x: 0.5241066, y: 0.09555596}
+      pivot: {x: 0.52410436, y: 0.097550526}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Clock-001_5
+      name: Clock-001-Hand-Hours
       rect:
         serializedVersion: 2
         x: 991
@@ -106,7 +106,7 @@ TextureImporter:
         width: 25
         height: 102
       alignment: 9
-      pivot: {x: 0.52603513, y: 0.11077825}
+      pivot: {x: 0.52603513, y: 0.121728934}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

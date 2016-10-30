@@ -1,13 +1,13 @@
 fileFormatVersion: 2
 guid: 54606adb38ba2aa4594c32243b177a4e
-timeCreated: 1477827650
+timeCreated: 1477828913
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Clock-002-House
-    21300002: Clock-Hand-Hours
+    21300002: Clock-002-Hand-Hours
     21300004: Clock-002-Pendulum
-    21300006: Clock-Hand-Minutes
+    21300006: Clock-002-Hand-Minutes
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -70,7 +70,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Clock-Hand-Hours
+      name: Clock-002-Hand-Hours
       rect:
         serializedVersion: 2
         x: 992
@@ -96,7 +96,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Clock-Hand-Minutes
+      name: Clock-002-Hand-Minutes
       rect:
         serializedVersion: 2
         x: 982

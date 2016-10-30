@@ -1,14 +1,14 @@
 fileFormatVersion: 2
 guid: 6cb5256f2fe25944bb8c5fd018a26ebd
-timeCreated: 1477827779
+timeCreated: 1477829917
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Clock-004-House
-    21300002: Clock-Hand-Minutes
-    21300004: Clock-Hand-Hours
-    21300006: Clock-Pendulum-01
-    21300008: Clock-004_4
+    21300002: Clock-004-Hand-Minutes
+    21300004: Clock-004-Hand-Hours
+    21300006: Clock-004-Pendulum-01
+    21300008: Clock-004-Pendulum-02
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -71,33 +71,33 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Clock-Hand-Minutes
+      name: Clock-004-Hand-Minutes
       rect:
         serializedVersion: 2
         x: 995
         y: 856
         width: 18
         height: 157
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.37635633, y: 0.010935012}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Clock-Hand-Hours
+      name: Clock-004-Hand-Hours
       rect:
         serializedVersion: 2
         x: 989
         y: 742
         width: 30
         height: 102
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.3887207, y: 0.025423536}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Clock-Pendulum-01
+      name: Clock-004-Pendulum-01
       rect:
         serializedVersion: 2
         x: 953
@@ -110,7 +110,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Clock-004_4
+      name: Clock-004-Pendulum-02
       rect:
         serializedVersion: 2
         x: 955
