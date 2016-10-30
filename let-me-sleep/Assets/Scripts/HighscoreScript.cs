@@ -14,7 +14,6 @@ public class HighscoreScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Debug.Log("start highscore script");
         backButton = GameObject.FindGameObjectWithTag("Back").GetComponent<Button>();
         backButton.onClick.AddListener(() => UnityEngine.SceneManagement.SceneManager.LoadScene("Menu"));
 
@@ -26,8 +25,6 @@ public class HighscoreScript : MonoBehaviour
 
     private void generateCurrentHighScores()
     {
-
-        Debug.Log("printing # highscores " + currentHighScores.Length);
         for (int i = 0; i < currentHighScores.Length; i++)
         {
             GameObject highScoreClone =
@@ -35,7 +32,6 @@ public class HighscoreScript : MonoBehaviour
 
 
             //edit text data
-            Debug.Log("text childs " + highScoreClone.GetComponentsInChildren<Text>().Length);
             foreach (Text t in highScoreClone.GetComponentsInChildren<Text>())
             {                
                 if (t.name == "Position")
@@ -52,7 +48,6 @@ public class HighscoreScript : MonoBehaviour
                 }
             }
             highScoreClone.transform.SetParent(GameObject.FindGameObjectWithTag("HighscoreList").transform);
-
         }
 
     }

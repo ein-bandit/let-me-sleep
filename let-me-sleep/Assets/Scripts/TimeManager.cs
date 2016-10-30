@@ -11,6 +11,9 @@ public class TimeManager : MonoBehaviour {
     public SaveHighscore saveHighscoreScript;
     public GameObject scoreCanvas;
 
+    //dummy init
+    private int points_hits = 0;
+    private int points_misses = 0;
 
     bool stopTime;
     bool showScore;
@@ -24,6 +27,10 @@ public class TimeManager : MonoBehaviour {
         stopTime = false;
         showScore = false;
         Time.timeScale = 1.0f;
+
+        //override points if not first time in scene;
+        points_hits = 0;
+        points_misses = 0;
 	}
 	
 	// Update is called once per frame
@@ -54,14 +61,29 @@ public class TimeManager : MonoBehaviour {
 
         if (showScore && Input.GetKeyDown("return"))
         {
-            int highscoreToSafe = (int) Mathf.Round(timeLasted);
-            saveHighscoreScript.saveHighScore(playerName.text,highscoreToSafe);
+            //implement a crazy function using points_ vars and timelasted.
+            //int highscoreToSafe = (int) Mathf.Round(timeLasted);
+            saveHighscoreScript.saveHighScore(playerName.text,points_hits);
             SceneManager.LoadScene("Highscore");
         }
 	}
 
-    public void addTime()
+
+    public void addClick(bool hit)
     {
-        remainingTime += bonusTime;
+        if (hit)
+        {
+            Debug.Log("bonus received");
+            points_hits += 1;
+            remainingTime += bonusTime;
+        } else
+        {
+            points_misses += 1;
+        }
+    }
+
+    public bool timeHasStopped()
+    {
+        return stopTime;
     }
 }

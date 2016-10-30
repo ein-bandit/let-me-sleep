@@ -10,24 +10,10 @@ public class SaveHighscore : MonoBehaviour
     void Start()
     {
         currentHighScores = GameManager.getHighscores();
-        foreach (string str in currentHighScores)
-        {
-            Debug.Log(str);
-        }
-        Debug.Log("currentHighscoreLength " + currentHighScores.Length);
     }
 
     public void saveHighScore(string name, int score)
-    {
-
-        Debug.Log("before saving...");
-        foreach (string str in currentHighScores)
-        {
-            Debug.Log(str);
-        }
-
-
-
+    {        
         int newHighscoreIndex = 0;
 
         int loop = maxHighScoreLength;
@@ -42,20 +28,11 @@ public class SaveHighscore : MonoBehaviour
             string[] newArray = new string[currentHighScores.Length + 1];
             for (int i = 0; i < currentHighScores.Length; i++)
             {
-                Debug.Log("copying value " + currentHighScores[i]);
                 newArray[i] = currentHighScores[i];
-                Debug.Log("copied value " + newArray[i]);
             }
             currentHighScores = newArray;
             //override loop to have new length.
             loop = currentHighScores.Length;
-
-            Debug.Log("new array...");
-            foreach (string str in currentHighScores)
-            {
-                Debug.Log(str);
-            }
-
         }
         
 
@@ -74,14 +51,11 @@ public class SaveHighscore : MonoBehaviour
         }
                
 
-        Debug.Log("newHighscoreIndex " + newHighscoreIndex);
 
         string highscore = name + ',' + score.ToString();
-        Debug.Log("new high score: " + highscore);
 
         //save last highscore at this position
         string nextValue = currentHighScores[newHighscoreIndex];
-        Debug.Log("nextvalue: " + nextValue);
 
         //save new highscore at new position.
         currentHighScores[newHighscoreIndex] = highscore;
@@ -93,14 +67,6 @@ public class SaveHighscore : MonoBehaviour
             nextValue = temp;
         }
         
-
-        Debug.Log("saving...");
-        foreach(string str in currentHighScores)
-        {
-            Debug.Log(str);
-        }
-
         GameManager.saveHighScores(currentHighScores);
-
     }
 }
