@@ -13,8 +13,8 @@ public class SaveHighscore : MonoBehaviour
     }
 
     public void saveHighScore(string name, int score)
-    {        
-        int newHighscoreIndex = 0;
+    {
+        int newHighscoreIndex = -1;
 
         int loop = maxHighScoreLength;
         if (currentHighScores.Length < maxHighScoreLength)
@@ -34,39 +34,51 @@ public class SaveHighscore : MonoBehaviour
             //override loop to have new length.
             loop = currentHighScores.Length;
         }
-        
 
+
+        bool indexFound = false;
         for (int i = 0; i < loop; i++)
         {
             //jump over last values if array was extended and highscore can be null at last index.
-            if (currentHighScores[i] != null)
+            if (currentHighScores[i] == null)
+            {
+                //if null this should be last index. if newsHighscoreIndex is still 0 then use this last index.
+                if (newHighscoreIndex == -1)
+                {
+                    newHighscoreIndex = i;
+                }
+
+            }
+            else if (indexFound == false)
             {
                 int temp = int.Parse(currentHighScores[i].Split(',')[1]);
                 if (temp <= score)
                 {
                     newHighscoreIndex = i;
-                    break;
+                    indexFound = true;
                 }
             }
         }
-               
 
 
-        string highscore = name + ',' + score.ToString();
-
-        //save last highscore at this position
-        string nextValue = currentHighScores[newHighscoreIndex];
-
-        //save new highscore at new position.
-        currentHighScores[newHighscoreIndex] = highscore;
-
-        for (int i = (newHighscoreIndex + 1); i < currentHighScores.Length; i++)
+        if (newHighscoreIndex != -1)
         {
-            string temp = currentHighScores[i];
-            currentHighScores[i] = nextValue;
-            nextValue = temp;
+            string highscore = name + ',' + score.ToString();
+
+            //save last highscore as next list value.
+            string nextValue = currentHighScores[newHighscoreIndex];
+
+            //save new highscore at correct position.
+            currentHighScores[newHighscoreIndex] = highscore;
+
+            for (int i = (newHighscoreIndex + 1); i < currentHighScores.Length; i++)
+            {
+                string temp = currentHighScores[i];
+                currentHighScores[i] = nextValue;
+                nextValue = temp;
+            }
+
+            GameManager.saveHighScores(currentHighScores);
         }
-        
-        GameManager.saveHighScores(currentHighScores);
     }
 }
