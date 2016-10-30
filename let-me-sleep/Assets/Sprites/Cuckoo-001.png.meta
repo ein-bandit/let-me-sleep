@@ -1,12 +1,18 @@
 fileFormatVersion: 2
 guid: 588fe46df88ce6746b9dd37721a034c3
-timeCreated: 1477765907
+timeCreated: 1477832916
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Cuckoo-001_0
     21300002: Cuckoo-001_1
     21300004: Cuckoo-001_2
+    21300006: Cuckoo-002_1
+    21300008: Cuckoo-002_2
+    21300010: Cuckoo-002_3
+    21300012: Cuckoo-003_1
+    21300014: Cuckoo-003_2
+    21300016: Cuckoo-003_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -74,10 +80,10 @@ TextureImporter:
         serializedVersion: 2
         x: 341
         y: 682.6666
-        width: 341.33334
-        height: 341.33334
+        width: 341.33337
+        height: 341.33337
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -87,10 +93,88 @@ TextureImporter:
         serializedVersion: 2
         x: 682
         y: 682.6666
+        width: 341.33337
+        height: 341.33337
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cuckoo-002_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 341.66666
         width: 341.33334
         height: 341.33334
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.49999997}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cuckoo-002_2
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 341.66666
+        width: 341.33337
+        height: 341.33334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.49999997}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cuckoo-002_3
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 341.66666
+        width: 341.33337
+        height: 341.33334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.49999997}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cuckoo-003_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.6666565
+        width: 341.33334
+        height: 341.33334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cuckoo-003_2
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 0.6666565
+        width: 341.33337
+        height: 341.33334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Cuckoo-003_3
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 0
+        width: 341
+        height: 341
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
