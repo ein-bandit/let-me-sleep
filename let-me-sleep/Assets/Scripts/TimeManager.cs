@@ -19,7 +19,7 @@ public class TimeManager : MonoBehaviour {
     bool showScore;
     float timeLasted = 0.0f; // used for score
     float remainingTime = 20.4f; // used to determine how long game lasts
-    float bonusTime = 1.0f; // amount of time bonus you get on shot
+    float bonusTime = 5.0f; // amount of time bonus you get on shot
 
 	// Use this for initialization
 	void Start () {

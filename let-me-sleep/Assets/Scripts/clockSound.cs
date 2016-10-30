@@ -33,6 +33,8 @@ public class clockSound : MonoBehaviour {
         yield return new WaitForSeconds(0.5f);
 
         int playingSoundNumber = Random.Range(0, clockSounds.Length);
-        _audio.PlayOneShot(clockSounds[playingSoundNumber], Random.Range(0.3f,0.6f));
+        _audio.clip = clockSounds[playingSoundNumber];
+        _audio.volume = Random.Range(0.3f, 0.6f);
+        _audio.Play();
     }
 }
