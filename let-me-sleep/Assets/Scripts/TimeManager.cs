@@ -73,7 +73,6 @@ public class TimeManager : MonoBehaviour {
     {
         if (hit)
         {
-            Debug.Log("bonus received");
             points_hits += 1;
             remainingTime += bonusTime;
         } else
