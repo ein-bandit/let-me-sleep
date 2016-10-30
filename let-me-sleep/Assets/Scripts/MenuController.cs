@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -17,6 +16,8 @@ public class MenuController : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        //overriding time scale to make animations move on replay.
+        Time.timeScale = 1f;
         changeMutedSprite();
                
         audioButton = GameObject.FindGameObjectWithTag("MuteButton").GetComponent<Button>();
@@ -33,7 +34,6 @@ public class MenuController : MonoBehaviour {
 
     void ToggleMuteSound()
     {
-        Debug.Log("toggling music");
         soundMuted = !soundMuted;
         AudioListener.volume = soundMuted ? 0 : 1;
         changeMutedSprite();

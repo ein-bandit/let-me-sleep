@@ -23,10 +23,13 @@ public class TimeManager : MonoBehaviour
     float timeLasted = 0.0f; // used for score
     float remainingTime = 15.4f; // used to determine how long game lasts
     float bonusTime = 1.0f; // amount of time bonus you get on shot
+    float malusTime = 0.5f; // amount of time malus (negative) when shot and missed.
 
     // Use this for initialization
     void Start()
     {
+        //override timescale to rerun animations when game is restarted.
+        Time.timeScale = 1f;
 
         GameOver.GetComponent<SpriteRenderer>().enabled = false;
         stopTime = false;
@@ -92,6 +95,7 @@ public class TimeManager : MonoBehaviour
         }
         else
         {
+            remainingTime -= malusTime;
             points_misses += 1;
         }
     }
