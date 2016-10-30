@@ -4,11 +4,11 @@ using System.Collections;
 public class CuckooSound : MonoBehaviour {
 
     AudioClip[] cuckooSounds = new AudioClip[1];
-    AudioSource audio;
+    AudioSource _audio;
 
     // Use this for initialization
     void Start () {
-        audio = GetComponent<AudioSource>();
+        _audio = GetComponent<AudioSource>();
 
         cuckooSounds[0] = Resources.Load("Cuckoo-sound-effect") as AudioClip;
 
@@ -19,6 +19,10 @@ public class CuckooSound : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+        if (Time.timeScale == 0 && _audio.isPlaying)
+        {
+            _audio.Stop();
+        }
 	}
 
     IEnumerator StartSound()
@@ -26,7 +30,7 @@ public class CuckooSound : MonoBehaviour {
         yield return new WaitForSeconds(0f);
 
         int playingSoundNumber = Random.Range(0, cuckooSounds.Length);
-        audio.PlayOneShot(cuckooSounds[playingSoundNumber], Random.Range(0.1f, 0.4f));
+        _audio.PlayOneShot(cuckooSounds[playingSoundNumber], Random.Range(0.1f, 0.4f));
         print(playingSoundNumber);
     }
 }
