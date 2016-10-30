@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 public class HighscoreScript : MonoBehaviour
 {
@@ -9,13 +10,13 @@ public class HighscoreScript : MonoBehaviour
     private string[] currentHighScores;
     private GameObject highScoreLine;
 
-    private UnityEngine.UI.Button backButton;
+    private Button backButton;
 
     // Use this for initialization
     void Start()
     {
         backButton = GameObject.FindGameObjectWithTag("Back").GetComponent<Button>();
-        backButton.onClick.AddListener(() => UnityEngine.SceneManagement.SceneManager.LoadScene("Menu"));
+        backButton.onClick.AddListener(() => SceneManager.LoadScene("Menu"));
 
         //get playerrefsx data for highscores
         highScoreLine = (GameObject)Resources.Load("HighscoreLinePrefab", typeof(GameObject));

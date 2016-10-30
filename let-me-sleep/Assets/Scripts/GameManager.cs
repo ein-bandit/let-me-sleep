@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -55,7 +56,6 @@ public class GameManager : MonoBehaviour
     {
         if (_audio == null)
         {
-            Debug.Log("starting audio");
             _audio = GameManager.instance.GetComponentInChildren<AudioSource>();
             _audio.Play();
         }
