@@ -1,14 +1,15 @@
 # Let Me Sleep!
 
-InnoGames GameJam 2016.
-
-Topic: Time Cheating
-
+InnoGames GameJam 2016\
+Topic: Time Cheating\
 Game Engine: Unity3D
 
-Moorhuhn-like shooter/clicker game in which you need to maximize your sleeping time before the alarm rings!
+Moorhuhn-like shooter/clicker game in which you need to maximize your sleeping time by scaring away the cuckoos!\
+Keep clicking the cuckoos to keep the alarm clock from ringing!
 
-![Let Me Sleep Main Menu Screenshot](https://igjam.eu/games/screenshot/1001)
+
+
+![Let Me Sleep Main Menu Screenshot](thumbnail.png)
 
 
 
